@@ -1,0 +1,35 @@
+{% extends 'core/base.html' %}
+
+{% block title %}FreshZone - Checkout{% endblock %}
+
+{% block content %}
+<h1 class="text-3xl font-semibold mb-6">Checkout</h1>
+
+<div class="max-w-md mx-auto bg-white p-6 rounded-md shadow-md">
+    <div>
+        <img src="{{ item.image.url }}" class="rounded-xl">
+    </div>
+    <div>
+        <h2 class="text-xl font-semibold mb-4">{{ item.name }}</h2>
+        <p class="text-gray-600 mb-4">Price: ${{ item.price }}</p>
+    </div>
+
+
+   
+     <!-- <form method="post" action="." class="mb-4">
+        {% csrf_token %}
+
+         <label for="quantity" class="block text-sm font-medium text-gray-700">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" min="1" required class="mt-1 p-2 border rounded-md w-full">
+
+       <label for="address" class="block text-sm font-medium text-gray-700 mt-4">Address:</label>
+        <textarea id="address" name="address" rows="4" cols="50" required
+            class="mt-1 p-2 border rounded-md w-full"></textarea>  
+
+       
+          <button type="submit"
+            class="mt-4 bg-teal-500 text-white py-2 px-4 rounded-md hover:bg-teal-700 focus:outline-none focus:bg-teal-700">Buy</button> 
+    </form>  -->
+    {{paypal.render}}
+</div>
+{% endblock %}
