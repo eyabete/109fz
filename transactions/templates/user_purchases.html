@@ -1,0 +1,23 @@
+<!-- transactions/user_purchases.html -->
+
+{% extends 'core/base.html' %}
+
+{% block title %}My Purchases{% endblock %}
+
+{% block content %}
+    <h1 class="text-3xl font-semibold mb-6">My Purchases</h1>
+
+    <div class="max-w-md mx-auto bg-white p-6 rounded-md shadow-md">
+        {% if purchases %}
+            <ul>
+                {% for purchase in purchases %}
+                    <li>
+                        <p>{{ purchase.item.name }} - Quantity: {{ purchase.quantity }} - Total: Php {{purchase.total_amount }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No purchases yet.</p>
+        {% endif %}
+    </div>
+{% endblock %}

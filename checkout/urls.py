@@ -18,6 +18,7 @@ app_name = 'checkout'
 
 urlpatterns = [
     path('<int:item_pk>/', views.checkout, name='check'),
+    path('purchases/<int:item_pk>/', views.purchases, name='purchases'),
     path('payment-failed/<int:item_pk>/', views.paymentFailed, name='payment-failed'),
     path('payment-success/<int:item_pk>/', views.PaymentSuccessful, name='payment-success'),
     # Add other checkout-related URLs if needed
