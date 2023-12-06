@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'checkout',
     'paypal.standard.ipn',
     'transactions',
+    'users',
 
 
     'social_django',  # <-- Here social-auth-app-django

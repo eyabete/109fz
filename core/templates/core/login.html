@@ -28,20 +28,22 @@
                 {{ form.non_field_errors }}
             </div>
         {% endif %}
-        {% if messages %}
-        {% for message in messages %}
-        <div class="alert text-center mt-5 alert-{{message.tags}}" >
-            {{message}}
-            </div>
-        {% endfor %}
+        {% if request.resolver_match.url_name != 'login' %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert text-center mt-5 alert-{{message.tags}}" >
+                        {{message}}
+                    </div>
+                {% endfor %}
+            {% endif %}
         {% endif %}
 
         <form action="" method="post" class="text-center mt-5">
             {% csrf_token%}
             {{form.captcha}}
             <button class="py-4 px-8 text-lg bg-teal-500 hover:bg-teal-700 rounded-xl text-white">Submit</button>
-            </form>
-        
+        </form>
+
 
     </form>
     <hr class="my-6 border-gray-300">

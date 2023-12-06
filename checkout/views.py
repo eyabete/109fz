@@ -80,7 +80,6 @@ def purchases(request, item_pk):
     purchase = Purchase.objects.create(
         user=request.user,
         item=item,
-        quantity=quantity,
         total_amount=total_amount,
         # Add other fields as needed
     )
